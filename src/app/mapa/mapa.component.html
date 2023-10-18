@@ -1,0 +1,17 @@
+<div class = "div-container">
+    <div class="content">
+        <h3>Projeto desenvolvido para VII Semana de Computação UFF</h3>
+    </div>
+    <div *ngIf="apiLoaded | async">
+        <google-map  [options]="options"        
+        height="1000"
+        width="1200">
+            <map-marker #marker="mapMarker" *ngFor="let markerPosition of marcadores"
+            [position]="markerPosition.position"
+            (mapClick)="openInfoWindow(marker,markerPosition)"
+           ></map-marker>
+           <map-info-window></map-info-window>
+        </google-map>
+      </div>
+
+    </div>

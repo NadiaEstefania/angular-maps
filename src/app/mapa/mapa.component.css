@@ -1,0 +1,9 @@
+.div-container{
+    display: flex;
+    justify-content: space-between
+}
+
+.content{
+    align-self: center;
+    text-align: center;
+}
