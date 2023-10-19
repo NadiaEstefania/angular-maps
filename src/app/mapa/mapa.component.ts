@@ -18,9 +18,6 @@ export class MapaComponent implements OnInit,OnDestroy{
 
   apiLoaded?: Observable<boolean>;
  
-  mapa!: google.maps.Map;
-
-
 
 //Este objeto Options define algumas propriedades de inicialização do mapa
   options: google.maps.MapOptions = {
@@ -28,13 +25,15 @@ export class MapaComponent implements OnInit,OnDestroy{
     zoom: 8
   };
 
-
+//ViewChild é um tipo de decorator que faz com que possamos acessar elementos do nosso template,
+//conseguimos acessar outros componentes filhos que usamos dentro do nosso template
+// por exemplo o <google-maps> é 
+//um componente da bibliote da Maps ou outros elementos presentes no template.
+//aqui estamos fazendo referencia ao infoWindow declarado no template a fim de acessar alguns metodos dele.
   @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;
 
   subscription$!: Subscription
 
-  markerPositions: google.maps.LatLngLiteral[] = [];
-  markerLabel: google.maps.MarkerLabel[] = []
 
   marcadores: Marcador[] = []
 
